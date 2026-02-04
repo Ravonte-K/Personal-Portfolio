@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HomePage() {
   return (
     <section>
@@ -22,6 +24,14 @@ export default function HomePage() {
             <li>Connect to live backend metrics.</li>
           </ul>
         </div>
+      </div>
+      <div className="mt-8">
+        <Link
+          href="/projects/earnings-summarizer"
+          className="inline-flex items-center rounded-lg border border-slate-800 bg-slate-900/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-900"
+        >
+          View Earnings Call Summarizer →
+        </Link>
       </div>
     </section>
   );
