@@ -3,34 +3,48 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <section>
-      <p className="text-sm uppercase tracking-[0.2em] text-slate-400">Week 1</p>
-      <h1 className="text-4xl font-bold">Portfolio Foundation</h1>
-      <p className="text-lg text-slate-300">
-        This is the live shell for your portfolio. The layout is ready for new projects,
-        case studies, and contact information.
-      </p>
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-          <h2 className="text-xl font-semibold">Current Focus</h2>
-          <p className="text-slate-300">
-            Building the initial frontend and deploying the FastAPI backend on Azure.
+      <div className="hero-shell">
+        <p className="hero-kicker">
+          Portfolio
+        </p>
+        <h1 className="hero-heading">
+          Computer Science + Finance student.
+        </h1>
+        <p className="hero-subcopy">
+          I like building practical projects and keeping my options open across tech, data, and
+          finance.
+        </p>
+      </div>
+
+      <div>
+        <p className="kicker">Overview</p>
+        <h2 className="section-title">Learning fast. Building often.</h2>
+      </div>
+
+      <div className="content-grid">
+        <div className="panel">
+          <h3 className="text-2xl font-semibold">Current Work</h3>
+          <p className="section-copy">
+            Studying ML foundations and shipping small projects to improve engineering and data
+            skills.
           </p>
         </div>
-        <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-          <h2 className="text-xl font-semibold">Next Steps</h2>
-          <ul className="list-disc space-y-2 pl-5 text-slate-300">
-            <li>Finalize project case studies.</li>
-            <li>Add contact and scheduling.</li>
-            <li>Connect to live backend metrics.</li>
+        <div className="panel">
+          <h3 className="text-2xl font-semibold">What You Can Explore</h3>
+          <ul className="section-copy list-disc space-y-2 pl-5">
+            <li>Projects and experiments.</li>
+            <li>Experience and coursework.</li>
+            <li>My evolving focus areas.</li>
           </ul>
         </div>
       </div>
-      <div className="mt-8">
+
+      <div className="flex flex-wrap gap-3">
         <Link
-          href="/projects/earnings-summarizer"
-          className="inline-flex items-center rounded-lg border border-slate-800 bg-slate-900/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-900"
+          href="/projects"
+          className="btn-primary"
         >
-          View Earnings Call Summarizer →
+          View Projects
         </Link>
       </div>
     </section>

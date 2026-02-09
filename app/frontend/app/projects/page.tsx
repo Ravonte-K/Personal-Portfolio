@@ -1,33 +1,48 @@
+import Link from "next/link";
+
 const projects = [
   {
-    title: "Azure Deployment Plan",
-    description: "Infrastructure outline for FastAPI + PostgreSQL + Static Web Apps."
+    title: "Earnings Call Summarizer",
+    description: "Summarizes earnings calls and surfaces key business insights.",
+    href: "/projects/earnings-summarizer"
   },
   {
-    title: "Portfolio UI Shell",
-    description: "Reusable layout and navigation for future case studies."
+    title: "Example Project",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, praesentium."
   },
   {
-    title: "Health Monitoring",
-    description: "Backend health checks and database connectivity validation."
+    title: "Example Project",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, praesentium."
+  },
+  {
+    title: "Example Project",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, praesentium."
   }
 ];
 
 export default function ProjectsPage() {
   return (
     <section>
-      <h1 className="text-3xl font-bold">Projects</h1>
-      <p className="text-slate-300">
-        A curated snapshot of active and upcoming work for the portfolio.
+      <div>
+        <p className="kicker">Projects</p>
+        <h1 className="section-title">Selected builds and technical experiments.</h1>
+      </div>
+      <p className="section-copy">
+        A snapshot of active and upcoming work.
       </p>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="content-grid">
         {projects.map((project) => (
-          <article
-            key={project.title}
-            className="rounded-xl border border-slate-800 bg-slate-900/50 p-6"
-          >
-            <h2 className="text-xl font-semibold">{project.title}</h2>
-            <p className="text-slate-300">{project.description}</p>
+          <article key={project.title} className="panel">
+            <h2 className="text-2xl font-semibold">{project.title}</h2>
+            <p className="section-copy">{project.description}</p>
+            {project.href ? (
+              <Link
+                href={project.href}
+                className="btn-secondary mt-4 inline-flex"
+              >
+                Live example
+              </Link>
+            ) : null}
           </article>
         ))}
       </div>

@@ -12,7 +12,7 @@ def create_engine() -> Optional[AsyncEngine]:
         return None
     return create_async_engine(DATABASE_URL, pool_pre_ping=True)
 
-
+# type: AsyncConnection
 async def check_connection(engine: AsyncEngine) -> None:
-    async with engine.connect() as connection:  # type: AsyncConnection
+    async with engine.connect() as connection:  
         await connection.execute(text("SELECT 1"))

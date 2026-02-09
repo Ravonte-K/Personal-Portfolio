@@ -14,20 +14,21 @@ const experience = [
 export default function ResumePage() {
   return (
     <section>
-      <h1 className="text-3xl font-bold">Resume</h1>
-      <p className="text-slate-300">
-        Highlighting the experience and skills that power the portfolio.
+      <div>
+        <p className="kicker">Experience</p>
+        <h1 className="section-title">Roles, systems, and outcomes.</h1>
+      </div>
+      <p className="section-copy">
+        Experience that combines product thinking, API architecture, and reliable cloud
+        deployment for modern web apps.
       </p>
       <div className="space-y-6">
         {experience.map((item) => (
-          <div
-            key={`${item.role}-${item.company}`}
-            className="rounded-xl border border-slate-800 bg-slate-900/50 p-6"
-          >
-            <h2 className="text-xl font-semibold">
+          <div key={`${item.role}-${item.company}`} className="panel">
+            <h2 className="text-2xl font-semibold">
               {item.role} · {item.company}
             </h2>
-            <p className="text-slate-300">{item.summary}</p>
+            <p className="section-copy">{item.summary}</p>
           </div>
         ))}
       </div>

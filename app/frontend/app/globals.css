@@ -2,14 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #f0f4f6;
+  --bg-strong: #8dbfda;
+  --text: #223343;
+  --text-inverse: #f7fbfd;
+  --muted: #5f7487;
+  --line: rgba(34, 51, 67, 0.14);
+  --font-display: "Avenir Next", "Futura", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  background: radial-gradient(circle at 20% -20%, #fffaf4 0%, var(--bg) 58%);
+  color: var(--text);
+  font-family: var(--font-display);
+  @apply antialiased;
 }
 
 main {
-  @apply mx-auto max-w-5xl px-6 py-12;
+  @apply mx-auto max-w-6xl px-5 pb-14 pt-8 md:px-10 md:pb-20 md:pt-10;
 }
 
 section {
-  @apply space-y-4;
+  @apply space-y-8;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-nav {
+  @apply mx-auto flex max-w-6xl items-center justify-between px-5 py-6 md:px-10;
+}
+
+.brand-mark {
+  @apply text-3xl font-bold tracking-tight;
+}
+
+.nav-tabs {
+  @apply flex items-center gap-4 text-sm font-semibold md:gap-6 md:text-base;
+}
+
+.tab-link {
+  @apply rounded-full px-3 py-1.5 transition-transform duration-200;
+  border: 1px solid transparent;
+}
+
+.tab-link:hover {
+  border-color: var(--line);
+  transform: translateY(-1px);
+}
+
+.tab-link.active {
+  background: var(--bg-strong);
+  border-color: transparent;
+  color: var(--text-inverse);
+}
+
+.hero-shell {
+  background: var(--bg-strong);
+  color: var(--text-inverse);
+  @apply rounded-[2rem] p-8 md:p-12;
+}
+
+.hero-kicker {
+  @apply text-sm font-medium uppercase tracking-[0.2em];
+  color: rgba(248, 252, 255, 0.9);
+}
+
+.hero-subcopy {
+  @apply max-w-2xl text-lg md:text-2xl;
+  color: rgba(248, 252, 255, 0.92);
+}
+
+.hero-heading {
+  @apply max-w-4xl text-5xl font-bold leading-[0.97] tracking-tight md:text-7xl;
+}
+
+.kicker {
+  color: var(--muted);
+  @apply text-xs uppercase tracking-[0.3em] md:text-sm;
+}
+
+.content-grid {
+  @apply grid gap-5 md:grid-cols-2;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: rgba(255, 252, 248, 0.62);
+  @apply rounded-3xl p-6;
+}
+
+.section-title {
+  @apply text-4xl font-bold leading-tight tracking-tight md:text-5xl;
+}
+
+.section-copy {
+  color: var(--muted);
+  @apply max-w-3xl text-lg;
+}
+
+.btn-primary {
+  @apply rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5;
+  background: #5f90ad;
+}
+
+.btn-secondary {
+  @apply rounded-full border px-4 py-2 text-sm font-semibold transition hover:-translate-y-0.5;
+  border-color: var(--line);
 }
