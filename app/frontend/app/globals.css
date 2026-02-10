@@ -81,7 +81,7 @@ section {
 
 .kicker {
   color: var(--muted);
-  @apply text-xs uppercase tracking-[0.3em] md:text-sm;
+  @apply text-xs font-semibold uppercase tracking-[0.3em] md:text-sm;
 }
 
 .content-grid {
