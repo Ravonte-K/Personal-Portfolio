@@ -12,5 +12,6 @@ dependencies = [
     "openai>=2.0.0",
     "yfinance>=0.2.65",
     "pandas>=2.3.0",
-    "python-dotenv>=1.1.0"
+    "python-dotenv>=1.1.0",
+    "python-multipart>=0.0.22",
 ]

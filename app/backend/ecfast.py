@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
@@ -101,14 +101,8 @@ def getComparisons(ticker:str) -> str:
     INF = (f'{ge} \n {line}\n {ip}\n{line}\n{pt}')
     return(INF)
 
-
-@app.get("/")
-def read_root():
-    return {"status": "ok"}
-
-@app.post("/initanalyze")
-def analyze_text(data: TextInput):
-    ticker = grabTicker(data.text)
+def findResponse(data: str):
+    ticker = grabTicker(data)
     response = client.chat.completions.create(
     messages=[
         {
@@ -117,7 +111,7 @@ def analyze_text(data: TextInput):
         },
         {
             "role": "user",
-            "content": (data.text),
+            "content": (data),
         },
         {
             "role":"user",
@@ -129,11 +123,28 @@ def analyze_text(data: TextInput):
     top_p=1.0,
     frequency_penalty=0.0,
     presence_penalty=0.0,
-    model=deployment
-)
+    model=deployment    
+    )
     aiOut = str(response.choices[0].message.content)
-    
     return(aiOut)
+
+@app.get("/")
+def read_root():
+    return {"status": "ok"}
+
+
+
+@app.post("/initanalyze/file")
+async def analyze_file(file: UploadFile):
+    raw = await file.read()
+    text = raw.decode("utf-8", errors="ignore").strip()
+    text = str(text)
+    return(findResponse(text))
+
+@app.post("/initanalyze/text")
+def analyze_text(data: TextInput):
+    inp = data.text
+    return(findResponse(inp))
 
 
 if __name__ == "__main__":

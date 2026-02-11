@@ -21,7 +21,7 @@ const defaultProjectProperties = {
 const projects: Project[] = [
   {
     title: "Earnings Call Summarizer",
-    description: "Summarizes earnings calls and surfaces key business insights.",
+    description: "A web app that summarizes earnings calls and extracts key risks for retail investors.",
     href: "/projects/earnings-summarizer",
     techStack: ["Python", "FastAPI", "OpenAI API", "PostgreSQL"],
     createdAt: "2025-12",
