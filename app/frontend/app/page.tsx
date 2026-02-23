@@ -42,7 +42,7 @@ export default function HomePage() {
       <div className="flex flex-wrap gap-3">
         <Link
           href="/projects"
-          className="btn-primary"
+          className="btn-primary w-full sm:w-auto"
         >
           View Projects
         </Link>

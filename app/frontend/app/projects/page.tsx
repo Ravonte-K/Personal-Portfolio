@@ -113,7 +113,7 @@ export default function ProjectsPage() {
                   <div className="project-actions">
                     <button
                       type="button"
-                      className="btn-secondary inline-flex"
+                      className="btn-secondary inline-flex w-full sm:w-auto"
                       onClick={() => setActiveProjectIndex(index)}
                     >
                       Project details
@@ -121,7 +121,7 @@ export default function ProjectsPage() {
                     {project.href ? (
                       <Link
                         href={project.href}
-                        className="btn-secondary inline-flex"
+                        className="btn-secondary inline-flex w-full sm:w-auto"
                       >
                         Live example
                       </Link>
@@ -152,7 +152,7 @@ export default function ProjectsPage() {
             <TechStackViz techStack={activeProjectStack} />
             <button
               type="button"
-              className="btn-secondary mt-5 inline-flex"
+              className="btn-secondary mt-5 inline-flex w-full sm:w-auto"
               onClick={() => setActiveProjectIndex(null)}
             >
               Close

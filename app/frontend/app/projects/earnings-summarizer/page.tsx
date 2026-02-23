@@ -81,15 +81,15 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
       <header className="w-full border-b bg-white/80 backdrop-blur">
-        <div className="mx-auto max-w-4xl px-6 py-6">
-          <h1 className="text-2xl font-semibold tracking-tight">Earnings Call Summarizer</h1>
+        <div className="mx-auto max-w-4xl px-4 py-5 sm:px-6 sm:py-6">
+          <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">Earnings Call Summarizer</h1>
           <p className="mt-1 text-sm text-slate-600">
             Drop a transcript file or paste transcript text, then submit for analysis.
           </p>
         </div>
       </header>
 
-      <section className="mx-auto flex w-full max-w-4xl flex-col gap-6 px-6 py-8">
+      <section className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 py-6 sm:gap-6 sm:px-6 sm:py-8">
         <div
           className={`w-full rounded-lg border-2 border-dashed p-6 text-center transition-colors ${
             dragActive ? "border-black bg-gray-50" : "border-gray-300"
@@ -130,7 +130,7 @@ export default function Home() {
         />
 
         <button
-          className="inline-flex w-fit items-center rounded-md bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex w-full items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-fit"
           onClick={handleSubmit}
           disabled={isSubmitting}
         >

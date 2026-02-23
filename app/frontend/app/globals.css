@@ -20,11 +20,11 @@ body {
 }
 
 main {
-  @apply mx-auto max-w-6xl px-5 pb-14 pt-8 md:px-10 md:pb-20 md:pt-10;
+  @apply mx-auto max-w-6xl px-4 pb-10 pt-6 sm:px-5 md:px-10 md:pb-20 md:pt-10;
 }
 
 section {
-  @apply space-y-8;
+  @apply space-y-6 md:space-y-8;
 }
 
 .site-header {
@@ -32,15 +32,15 @@ section {
 }
 
 .site-nav {
-  @apply mx-auto flex max-w-6xl items-center justify-between px-5 py-6 md:px-10;
+  @apply mx-auto flex max-w-6xl flex-col items-start gap-4 px-4 py-4 sm:px-5 md:flex-row md:items-center md:justify-between md:px-10 md:py-6;
 }
 
 .brand-mark {
-  @apply text-3xl font-bold tracking-tight;
+  @apply text-2xl font-bold tracking-tight sm:text-3xl;
 }
 
 .nav-tabs {
-  @apply flex items-center gap-4 text-sm font-semibold md:gap-6 md:text-base;
+  @apply flex w-full items-center gap-3 overflow-x-auto pb-1 text-sm font-semibold sm:gap-4 md:w-auto md:gap-6 md:overflow-visible md:pb-0 md:text-base;
 }
 
 .tab-link {
@@ -62,7 +62,7 @@ section {
 .hero-shell {
   background: var(--bg-strong);
   color: var(--text-inverse);
-  @apply rounded-[2rem] p-8 md:p-12;
+  @apply rounded-[1.5rem] p-6 sm:p-8 md:rounded-[2rem] md:p-12;
 }
 
 .hero-kicker {
@@ -71,12 +71,12 @@ section {
 }
 
 .hero-subcopy {
-  @apply max-w-2xl text-lg md:text-2xl;
+  @apply max-w-2xl text-base sm:text-lg md:text-2xl;
   color: rgba(248, 252, 255, 0.92);
 }
 
 .hero-heading {
-  @apply max-w-4xl text-5xl font-bold leading-[0.97] tracking-tight md:text-7xl;
+  @apply max-w-4xl text-4xl font-bold leading-[0.97] tracking-tight sm:text-5xl md:text-7xl;
 }
 
 .kicker {
@@ -85,26 +85,26 @@ section {
 }
 
 .content-grid {
-  @apply grid gap-5 md:grid-cols-2;
+  @apply grid gap-4 md:gap-5 md:grid-cols-2;
 }
 
 .panel {
   border: 1px solid var(--line);
   background: rgba(255, 252, 248, 0.62);
-  @apply rounded-3xl p-6;
+  @apply rounded-2xl p-5 md:rounded-3xl md:p-6;
 }
 
 .section-title {
-  @apply text-4xl font-bold leading-tight tracking-tight md:text-5xl;
+  @apply text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl;
 }
 
 .section-copy {
   color: var(--muted);
-  @apply max-w-3xl text-lg;
+  @apply max-w-3xl text-base md:text-lg;
 }
 
 .btn-primary {
-  @apply rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5;
+  @apply rounded-full px-6 py-3 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 sm:w-auto;
   background: #5f90ad;
 }
 
@@ -142,18 +142,18 @@ section {
 
 .project-modal-overlay {
   background: rgba(34, 51, 67, 0.36);
-  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  @apply fixed inset-0 z-50 flex items-end justify-center p-0 sm:p-4 md:items-center;
 }
 
 .project-modal {
   border: 1px solid var(--line);
   background: #fffdf9;
   box-shadow: 0 20px 40px rgba(34, 51, 67, 0.2);
-  @apply w-full max-w-xl rounded-3xl p-6 md:p-8;
+  @apply max-h-[85vh] w-full max-w-xl overflow-y-auto rounded-t-3xl p-5 sm:rounded-3xl sm:p-6 md:p-8;
 }
 
 .project-modal-title {
-  @apply text-3xl font-bold leading-tight tracking-tight;
+  @apply text-2xl font-bold leading-tight tracking-tight md:text-3xl;
 }
 
 .project-modal-copy {
@@ -162,5 +162,9 @@ section {
 }
 
 .project-actions {
-  @apply mt-4 flex items-center justify-between gap-3;
+  @apply mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between;
+}
+
+.project-actions .btn-secondary {
+  @apply justify-center;
 }
