@@ -30,12 +30,20 @@ client = AzureOpenAI(
     api_key=subscription_key,
 )
 
+cors_allowed_origins = os.getenv("CORS_ALLOWED_ORIGINS")
+if cors_allowed_origins:
+    allowed_origins = [origin.strip() for origin in cors_allowed_origins.split(",") if origin.strip()]
+else:
+    allowed_origins = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:3001",
+        "https://ml-project-web.fly.dev",
+    ]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000",
-                   "http://127.0.0.1:3000",
-                   "http://localhost:3001"
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

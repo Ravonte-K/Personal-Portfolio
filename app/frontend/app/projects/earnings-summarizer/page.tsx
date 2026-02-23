@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 
-const ANALYZE_FILE_URL = "http://127.0.0.1:8000/initanalyze/file";
-const ANALYZE_TEXT_URL = "http://127.0.0.1:8000/initanalyze/text";
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
+const ANALYZE_FILE_URL = `${API_BASE_URL}/initanalyze/file`;
+const ANALYZE_TEXT_URL = `${API_BASE_URL}/initanalyze/text`;
 
 export default function Home() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
