@@ -1,12 +1,19 @@
 const experience = [
   {
-    role: "Backend Engineer",
-    company: "Your Company",
-    summary: "Built scalable APIs and deployment pipelines for cloud-native services."
+    role: "AI Engineer Mentorship",
+    company: "Blue Yonder",
+    summary: `Learning first hand from a generative AI software engineer at blue yonder. 
+    Blue yonder is a supply chain company that serves a wide variety of clients. Specifically I follow the generative AI development team following and learning from engineers.
+    Built scalable APIs and deployment pipelines for cloud-native services.`
   },
   {
-    role: "Full-Stack Developer",
-    company: "Your Studio",
+    role: "LLM course",
+    company: "Coursera",
+    summary: "Designed interactive web experiences with React and Tailwind CSS."
+  },
+  {
+    role: "Independent Learning and Research",
+    company: "",
     summary: "Designed interactive web experiences with React and Tailwind CSS."
   }
 ];

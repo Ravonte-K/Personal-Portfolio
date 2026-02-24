@@ -8,7 +8,7 @@ export default function HomePage() {
           Portfolio
         </p>
         <h1 className="hero-heading">
-          Computer Science + Finance student.
+          Aspiring Computer Science & Finance student.
         </h1>
         <p className="hero-subcopy">
           I like building practical projects and keeping my options open across tech, data, and

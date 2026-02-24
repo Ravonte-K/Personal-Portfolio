@@ -28,7 +28,7 @@ const projects: Project[] = [
     details: "Parses transcripts, extracts themes, and ranks key commentary for faster investor research."
   },
   {
-    title: "Example Project",
+    title: "Price prediction machine learning model",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, praesentium.",
     details: "A lightweight sandbox project for testing component structure and reusable layout patterns."
   },
