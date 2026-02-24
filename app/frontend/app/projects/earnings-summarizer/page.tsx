@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "https://ml-project-api.fly.dev").replace(/\/$/, "");
+// use this if devoloping local
+// const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
 const ANALYZE_FILE_URL = `${API_BASE_URL}/initanalyze/file`;
 const ANALYZE_TEXT_URL = `${API_BASE_URL}/initanalyze/text`;
 

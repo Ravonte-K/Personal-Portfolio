@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
-from openai import AzureOpenAI
+from openai import OpenAI
 import yfinance as yf
 import pandas as pd
 from dotenv import load_dotenv
@@ -14,19 +14,13 @@ app = FastAPI()
 
 
 
+model_name = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
 
-endpoint = "https://ravontek-practiceec-resource.cognitiveservices.azure.com/"
-model_name = "gpt-4.1-mini"
-deployment = "gpt-4.1-mini"
-
-subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
+subscription_key = os.getenv("OPENAI_API_KEY")
 if not subscription_key:
-    raise RuntimeError("AZURE_OPENAI_API_KEY is not set")
-api_version = "2024-12-01-preview"
+    raise RuntimeError("OPENAI_API_KEY is not set")
 
-client = AzureOpenAI(
-    api_version=api_version,
-    azure_endpoint=endpoint,
+client = OpenAI(
     api_key=subscription_key,
 )
 
@@ -57,9 +51,9 @@ class TextInput(BaseModel):
 
 def grabTicker(text:str)-> str | None:
     response = client.chat.completions.create(
-         model=deployment,
+         model=model_name,
         temperature=0,
-        max_completion_tokens=200,
+        max_tokens=200,
         messages=[
             {
                 "role": "system",
@@ -126,12 +120,12 @@ def findResponse(data: str):
             "content": (f'compare your initial analysis of the earning call report to the following data. call out any conflics or confirmations: {getComparisons(str(ticker))}')
         }
     ],
-    max_completion_tokens=13107,
+    max_tokens=13107,
     temperature=.2,
     top_p=1.0,
     frequency_penalty=0.0,
     presence_penalty=0.0,
-    model=deployment    
+    model=model_name
     )
     aiOut = str(response.choices[0].message.content)
     return(aiOut)
@@ -156,4 +150,5 @@ def analyze_text(data: TextInput):
 
 
 if __name__ == "__main__":
-    print(getComparisons("AAPL"))
+    findResponse("testing testing testing apple is the company")
+    # print(getComparisons("AAPL"))
