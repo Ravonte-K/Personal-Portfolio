@@ -121,7 +121,7 @@ def findResponse(data: str):
         }
     ],
     max_tokens=13107,
-    temperature=.2,
+    temperature=.1,
     top_p=1.0,
     frequency_penalty=0.0,
     presence_penalty=0.0,
@@ -150,5 +150,5 @@ def analyze_text(data: TextInput):
 
 
 if __name__ == "__main__":
-    findResponse("testing testing testing apple is the company")
-    # print(getComparisons("AAPL"))
+    # findResponse("testing testing testing apple is the company")
+    print(getComparisons("AAPL"))
