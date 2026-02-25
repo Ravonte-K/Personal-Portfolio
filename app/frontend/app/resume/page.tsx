@@ -4,18 +4,24 @@ const experience = [
     company: "Blue Yonder",
     summary: `Learning first hand from a generative AI software engineer at blue yonder. 
     Blue yonder is a supply chain company that serves a wide variety of clients. Specifically I follow the generative AI development team following and learning from engineers.
-    Built scalable APIs and deployment pipelines for cloud-native services.`
+    I have built smaller projects utilizing the same skillset as their production`
   },
   {
     role: "LLM course",
     company: "Coursera",
-    summary: "Designed interactive web experiences with React and Tailwind CSS."
+    summary: "Completed a LLM course reccomended by my mentor."
   },
   {
     role: "Independent Learning and Research",
     company: "",
-    summary: "Designed interactive web experiences with React and Tailwind CSS."
-  }
+    summary: `Self-studying machine learning, finance, and software engineering through hands-on projects.
+     Built Python pipelines for financial data analysis, trained ML models for price prediction, and developed full-stack apps using FastAPI, React, and Tailwind. Currently focused on strengthening and fully understanding fundamentals of both my fields of interest.`
+  },
+  {
+    role: "AP Computer Science A",
+    company: "Hopkins High School",
+    summary: "Independently studied and preping for the AP exam."
+  },
 ];
 
 export default function ResumePage() {
@@ -23,11 +29,10 @@ export default function ResumePage() {
     <section>
       <div>
         <p className="kicker">Experience</p>
-        <h1 className="section-title">Roles, systems, and outcomes.</h1>
+        <h1 className="section-title">Roles, Coursework, and Independent Learning.</h1>
       </div>
       <p className="section-copy">
-        Experience that combines product thinking, API architecture, and reliable cloud
-        deployment for modern web apps.
+        Experience focused on building fundamentals and building real projects.
       </p>
       <div className="space-y-6">
         {experience.map((item) => (

@@ -28,17 +28,29 @@ const projects: Project[] = [
     details: "Parses transcripts, extracts themes, and ranks key commentary for faster investor research."
   },
   {
-    title: "Price prediction machine learning model",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, praesentium.",
-    details: "A lightweight sandbox project for testing component structure and reusable layout patterns."
+    title: "Price prediction ML model",
+    description: "Trains a model to predict next day returns using historical price and volume feature with walk-foward validation",
+    techStack: ["Python", "Pandas", "Yfinance", "MLflow"],
+    details: `A supervised ML pipeline for next day return forcasting using historcal data.
+              Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics`
   },
   {
-    title: "Example Project",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, praesentium."
+    title: "Strategy Backtester",
+    description: "A modular backtesting engine that can test basic strategies.",
+    details: `A lightweight backtesting framework for evaluating simple trading strategies on historical market data.
+     Supports momentum, moving average crossover, RSI, and model-driven signals with basic transaction cost modeling. Computes core performance metrics including total return, win rate, Sharpe ratio, and max drawdown.
+     Designed to validate ideas quickly and understand how strategy logic translates into real portfolio outcomes.`,
+    techStack: ["Python", "Pandas", "Numpy", "Schwab API (for market data)", "Matplotlib","Streamlit"],
+    createdAt: "..."
   },
   {
-    title: "Example Project",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, praesentium."
+    title: "Jump shot analyzer",
+    description: "A computer vision jumpshot analyzer that returns metrics based off a short side view video.",
+    details: `A computer vision tool that analyzes jump shot form from video using pose estimation. 
+    Extracts joint angles and timing (dip, set point, release) and generates a consistency report with visual plots and practical coaching cues. 
+    Built as an end-to-end system: video upload → pose tracking → metrics → results dashboard.`,
+    techStack: ["OpenCV", "Python", "FastAPI", "Matplotlib"],
+    createdAt: "..."
   }
 ];
 

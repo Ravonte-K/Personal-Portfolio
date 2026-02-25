@@ -71,12 +71,12 @@ section {
 }
 
 .hero-subcopy {
-  @apply max-w-2xl text-base sm:text-lg md:text-2xl;
+  @apply mt-4 max-w-2xl text-base sm:mt-6 sm:text-lg md:mt-8 md:text-2xl;
   color: rgba(248, 252, 255, 0.92);
 }
 
 .hero-heading {
-  @apply max-w-4xl text-4xl font-bold leading-[0.97] tracking-tight sm:text-5xl md:text-7xl;
+  @apply max-w-5xl text-4xl font-bold leading-[0.97] tracking-tight sm:text-5xl md:text-7xl;
 }
 
 .kicker {

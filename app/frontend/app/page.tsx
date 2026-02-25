@@ -8,24 +8,23 @@ export default function HomePage() {
           Portfolio
         </p>
         <h1 className="hero-heading">
-          Aspiring Computer Science & Finance student.
+          Exploring computer science and finance through data-driven projects.
         </h1>
         <p className="hero-subcopy">
-          I like building practical projects and keeping my options open across tech, data, and
-          finance.
+          Focused on building strong fundamentals through hands-on projects.
         </p>
       </div>
 
       <div>
         <p className="kicker">Overview</p>
-        <h2 className="section-title">Learning fast. Building often.</h2>
+        <h2 className="section-title">Applied Learning Through Real Projects.</h2>
       </div>
 
       <div className="content-grid">
         <div className="panel">
           <h3 className="text-2xl font-semibold">Current Work</h3>
           <p className="section-copy">
-            Studying ML foundations and shipping small projects to improve engineering and data
+            Studying data and ML foundations and shipping small projects to improve engineering and data
             skills.
           </p>
         </div>
@@ -39,12 +38,18 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <Link
           href="/projects"
           className="btn-primary w-full sm:w-auto"
         >
           View Projects
+        </Link>
+        <Link
+          href="/resume"
+          className="btn-primary w-full sm:w-auto"
+        >
+          View Experience
         </Link>
       </div>
     </section>

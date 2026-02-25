@@ -7,6 +7,21 @@ const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "https://ml-project-api
 // const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
 const ANALYZE_FILE_URL = `${API_BASE_URL}/initanalyze/file`;
 const ANALYZE_TEXT_URL = `${API_BASE_URL}/initanalyze/text`;
+const EXAMPLE_TRANSCRIPT = `Operator: Good afternoon, and welcome to Toyota Corp's Q2 2025 earnings call.
+
+CEO: Thank you for joining us. We delivered revenue of $4.2 billion, up 12% year over year, with strength in cloud and enterprise software.
+
+CFO: Gross margin was 58.4%, up 90 basis points. Operating income was $810 million, and diluted EPS came in at $1.18.
+
+Analyst: Can you comment on demand trends heading into Q3?
+
+CEO: We continue to see resilient demand in large enterprise accounts. Our pipeline remains healthy, and renewal rates were above expectations.
+
+Analyst: What are you assuming for guidance?
+
+CFO: For Q3, we expect revenue between $4.25 and $4.35 billion and operating margin in the 18.5% to 19.0% range.
+
+CEO: In closing, we are focused on disciplined execution and long-term value creation.`;
 
 export default function Home() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -15,6 +30,7 @@ export default function Home() {
   const [result, setResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isExampleOpen, setIsExampleOpen] = useState(false);
 
   const isSupportedTextFile = (file: File) => {
     return file.type.startsWith("text/") || file.name.toLowerCase().endsWith(".txt");
@@ -86,7 +102,14 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-4 py-5 sm:px-6 sm:py-6">
           <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">Earnings Call Summarizer</h1>
           <p className="mt-1 text-sm text-slate-600">
-            Drop a transcript file or paste transcript text, then submit for analysis.
+            Drop a transcript file or paste transcript text, then submit for analysis. Or use{" "}
+            <button
+              type="button"
+              className="font-medium text-sky-700 underline decoration-sky-500 underline-offset-2 transition hover:text-sky-900"
+              onClick={() => setIsExampleOpen(true)}
+            >
+              this example text
+            </button>
           </p>
         </div>
       </header>
@@ -147,6 +170,37 @@ export default function Home() {
           </pre>
         )}
       </section>
+
+      {isExampleOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="example-transcript-title"
+          onClick={() => setIsExampleOpen(false)}
+        >
+          <div
+            className="w-full max-w-3xl rounded-lg bg-white p-5 shadow-2xl sm:p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-4 flex items-center justify-between">
+              <h2 id="example-transcript-title" className="text-lg font-semibold text-slate-900">
+                Example Earnings Call Transcript
+              </h2>
+              <button
+                type="button"
+                className="rounded-md border border-slate-300 px-3 py-1.5 text-sm text-slate-700 transition hover:bg-slate-100"
+                onClick={() => setIsExampleOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+            <pre className="max-h-[60vh] overflow-y-auto rounded-md bg-slate-50 p-4 text-sm text-slate-800">
+              {EXAMPLE_TRANSCRIPT}
+            </pre>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
