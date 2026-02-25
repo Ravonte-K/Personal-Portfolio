@@ -8,23 +8,23 @@ export default function HomePage() {
           Portfolio
         </p>
         <h1 className="hero-heading">
-          Exploring computer science and finance through data-driven projects.
+          Exploring computer science and finance through data-driven projects
         </h1>
         <p className="hero-subcopy">
-          Focused on building strong fundamentals through hands-on projects.
+          Focused on building strong fundamentals through hands-on work.
         </p>
       </div>
 
       <div>
         <p className="kicker">Overview</p>
-        <h2 className="section-title">Applied Learning Through Real Projects.</h2>
+        <h2 className="section-title">Applied Learning Through Real Projects</h2>
       </div>
 
       <div className="content-grid">
         <div className="panel">
           <h3 className="text-2xl font-semibold">Current Work</h3>
           <p className="section-copy">
-            Studying data and ML foundations and shipping small projects to improve engineering and data
+            Studying data and machine learning foundations and shipping small projects to improve engineering and data
             skills.
           </p>
         </div>

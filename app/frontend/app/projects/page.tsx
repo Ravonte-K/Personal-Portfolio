@@ -28,7 +28,7 @@ const projects: Project[] = [
     details: "Parses transcripts, extracts themes, and ranks key commentary for faster investor research."
   },
   {
-    title: "Price prediction ML model",
+    title: "Price Prediction Machine-Learning Model",
     description: "Trains a model to predict next day returns using historical price and volume feature with walk-foward validation.",
     techStack: ["Python", "Pandas", "Yfinance", "MLflow"],
     details: `A supervised ML pipeline for next day return forcasting using historcal data.
@@ -44,7 +44,7 @@ const projects: Project[] = [
     createdAt: "..."
   },
   {
-    title: "Jump shot analyzer",
+    title: "Jump Shot Analyzer",
     description: "A computer vision jumpshot analyzer that returns metrics based off a short side view video.",
     details: `A computer vision tool that analyzes jump shot form from video using pose estimation. 
     Extracts joint angles and timing (dip, set point, release) and generates a consistency report with visual plots and practical coaching cues. 
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
     <section>
       <div>
         <p className="kicker">Projects</p>
-        <h1 className="section-title">Selected builds and technical experiments.</h1>
+        <h1 className="section-title">Selected builds and technical experiments</h1>
       </div>
       <p className="section-copy">
         A snapshot of active and upcoming work.

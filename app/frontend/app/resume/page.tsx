@@ -22,6 +22,11 @@ const experience = [
     company: "Hopkins High School",
     summary: "Independently studied and preping for the AP exam."
   },
+  {
+    role: "AP Computer Science Principles",
+    company: "Hopkins High School",
+    summary: "Studied for and passed the AP exam"
+  }
 ];
 
 export default function ResumePage() {
@@ -29,7 +34,7 @@ export default function ResumePage() {
     <section>
       <div>
         <p className="kicker">Experience</p>
-        <h1 className="section-title">Roles, Coursework, and Independent Learning.</h1>
+        <h1 className="section-title">Roles, Coursework, and Independent Learning</h1>
       </div>
       <p className="section-copy">
         Experience focused on building fundamentals and building real projects.
