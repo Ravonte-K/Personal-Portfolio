@@ -29,10 +29,10 @@ const projects: Project[] = [
   },
   {
     title: "Price prediction ML model",
-    description: "Trains a model to predict next day returns using historical price and volume feature with walk-foward validation",
+    description: "Trains a model to predict next day returns using historical price and volume feature with walk-foward validation.",
     techStack: ["Python", "Pandas", "Yfinance", "MLflow"],
     details: `A supervised ML pipeline for next day return forcasting using historcal data.
-              Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics`
+              Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics.`
   },
   {
     title: "Strategy Backtester",

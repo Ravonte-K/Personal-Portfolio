@@ -2,14 +2,14 @@ const experience = [
   {
     role: "AI Engineer Mentorship",
     company: "Blue Yonder",
-    summary: `Learning first hand from a generative AI software engineer at blue yonder. 
-    Blue yonder is a supply chain company that serves a wide variety of clients. Specifically I follow the generative AI development team following and learning from engineers.
-    I have built smaller projects utilizing the same skillset as their production`
+    summary: `Learning first hand from a generative AI software engineer at Blue Yonder. 
+    Blue Yonder is a supply chain company that serves a wide variety of clients. Specifically I work with the generative AI development team, following and learning from engineers.
+    I have built smaller projects utilizing the same skillset as their production.`
   },
   {
     role: "LLM course",
     company: "Coursera",
-    summary: "Completed a LLM course reccomended by my mentor."
+    summary: "Completed a LLM course recommended by my mentor."
   },
   {
     role: "Independent Learning and Research",
