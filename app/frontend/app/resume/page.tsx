@@ -9,7 +9,8 @@ const experience = [
   {
     role: "LLM course",
     company: "Coursera",
-    summary: "Completed a LLM course recommended by my mentor."
+    summary: "Completed a LLM course recommended by my mentor.",
+    certificateUrl: "https://coursera.org/share/c41cf4d59e225d9a5362c8e326183996"
   },
   {
     role: "Independent Learning and Research",
@@ -46,6 +47,16 @@ export default function ResumePage() {
               {item.role} · {item.company}
             </h2>
             <p className="section-copy">{item.summary}</p>
+            {item.certificateUrl ? (
+              <a
+                href={item.certificateUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-block underline"
+              >
+                View certificate
+              </a>
+            ) : null}
           </div>
         ))}
       </div>
