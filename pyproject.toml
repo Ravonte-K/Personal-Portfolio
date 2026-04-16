@@ -14,4 +14,6 @@ dependencies = [
     "pandas>=2.3.0",
     "python-dotenv>=1.1.0",
     "python-multipart>=0.0.22",
+    "scikit-learn>=1.8.0",
+    "numpy>=2.4.2",
 ]

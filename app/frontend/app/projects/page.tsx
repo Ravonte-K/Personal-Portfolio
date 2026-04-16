@@ -30,6 +30,7 @@ const projects: Project[] = [
   {
     title: "Price Prediction Machine-Learning Model",
     description: "Trains a model to predict next day returns using historical price and volume feature with walk-foward validation.",
+    href: "/projects/price-prediction",
     techStack: ["Python", "Pandas", "Yfinance", "MLflow"],
     details: `A supervised ML pipeline for next day return forcasting using historcal data.
               Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics.`

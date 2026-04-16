@@ -1,14 +1,29 @@
-from fastapi import FastAPI, File, UploadFile
+import io
+import os
+import tempfile
+import json
+
+import pandas as pd
+from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import os
+from pandas.tseries.offsets import BDay
 from openai import OpenAI
 import yfinance as yf
-import pandas as pd
 from dotenv import load_dotenv
+
+from ml import (
+    get_data,
+    make_inference_features,
+    train_and_save,
+    load_artifacts,
+    composite_predictor,
+    PATH,
+    MODEL_PATH,
+    HORIZON_DAYS,
+)
+
 load_dotenv()
-import json
-import re
 
 app = FastAPI()
 
@@ -134,6 +149,114 @@ def findResponse(data: str):
 def read_root():
     return {"status": "ok"}
 
+
+
+def _normalize_csv(raw: bytes) -> bytes:
+    """Ensure the CSV has a 'Date' and 'Close' column before passing to ml.py."""
+    df = pd.read_csv(io.StringIO(raw.decode("utf-8")))
+    df.columns = [c.strip() for c in df.columns]
+    col_map = {c.lower(): c for c in df.columns}
+
+    date_col = col_map.get("date")
+    close_col = col_map.get("adj close") or col_map.get("close")
+
+    if not date_col or not close_col:
+        raise HTTPException(status_code=400, detail="CSV must contain a Date and a Close (or Adj Close) column.")
+
+    rename = {}
+    if date_col != "Date":
+        rename[date_col] = "Date"
+    if close_col != "Close":
+        rename[close_col] = "Close"
+    if rename:
+        df = df.rename(columns=rename)
+
+    return df.to_csv(index=False).encode("utf-8")
+
+
+def _ensure_model_trained():
+    """Train on spy.csv once if no saved model exists."""
+    if not os.path.exists(MODEL_PATH):
+        if not os.path.exists(PATH):
+            raise HTTPException(status_code=503, detail="Training data (spy.csv) not found.")
+        train_and_save(PATH, MODEL_PATH)
+
+
+def _build_predictions(feat_df: pd.DataFrame, artifacts: dict) -> list:
+    last_rows = feat_df.tail(10)
+    preds = composite_predictor(
+        direction_model=artifacts["direction_model"],
+        return_model=artifacts["return_model"],
+        direction_scaler=artifacts["scaler"],
+        X_dir=last_rows[artifacts["direction_features"]],
+        X_ret=last_rows[artifacts["return_features"]],
+        close=last_rows["Close"],
+        direction_threshold=artifacts["direction_threshold"],
+    ).reset_index(drop=True)
+    source_dates = last_rows["Date"].reset_index(drop=True)
+    return [
+        {
+            "date": (source_dates.iloc[i] + BDay(HORIZON_DAYS)).strftime("%Y-%m-%d"),
+            "close": round(float(preds.iloc[i]["pred_price"]), 2),
+            "direction": int(preds.iloc[i]["direction"]),
+        }
+        for i in range(len(preds))
+    ]
+
+
+@app.get("/predict/default")
+def predict_default():
+    _ensure_model_trained()
+    artifacts = load_artifacts(MODEL_PATH)
+
+    raw_df = get_data(PATH)
+    feat_df = make_inference_features(raw_df)
+
+    historical = [
+        {"date": row["Date"].strftime("%Y-%m-%d"), "close": round(float(row["Close"]), 2)}
+        for _, row in raw_df.tail(200).iterrows()
+    ]
+    predictions = _build_predictions(feat_df, artifacts)
+    return {"historical": historical, "predictions": predictions}
+
+
+@app.post("/predict/file")
+async def predict_file(file: UploadFile):
+    raw = await file.read()
+
+    try:
+        normalized = _normalize_csv(raw)
+    except HTTPException:
+        raise
+    except Exception:
+        raise HTTPException(status_code=400, detail="Could not parse CSV file.")
+
+    # Write to a temp file so ml.py path-based functions can read it
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as tmp:
+        tmp.write(normalized)
+        tmp_path = tmp.name
+
+    try:
+        _ensure_model_trained()
+        artifacts = load_artifacts(MODEL_PATH)
+
+        raw_df = get_data(tmp_path)
+        feat_df = make_inference_features(raw_df)
+        if len(feat_df) < 10:
+            raise HTTPException(
+                status_code=400,
+                detail="Not enough rows after feature engineering. Provide at least 80 rows of history.",
+            )
+
+        historical = [
+            {"date": row["Date"].strftime("%Y-%m-%d"), "close": round(float(row["Close"]), 2)}
+            for _, row in raw_df.iterrows()
+        ]
+        predictions = _build_predictions(feat_df, artifacts)
+        return {"historical": historical, "predictions": predictions}
+
+    finally:
+        os.unlink(tmp_path)
 
 
 @app.post("/initanalyze/file")
