@@ -29,11 +29,11 @@ const projects: Project[] = [
   },
   {
     title: "Price Prediction Machine-Learning Model",
-    description: "Trains a model to predict next day returns using historical price and volume feature with walk-foward validation.",
+    description: "Trains a model to predict a simple 10 market day outlook using historical price and volume features.",
     href: "/projects/price-prediction",
-    techStack: ["Python", "Pandas", "Yfinance", "MLflow"],
-    details: `A supervised ML pipeline for next day return forcasting using historcal data.
-              Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics.`
+    techStack: ["Python", "Pandas", "Scikit-learn", "MLflow"],
+    details: `A supervised ML pipeline for 10 trading day forcasting using historcal data.
+              Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics. The model also outpreforms baseline models like simple MA and always up.`
   },
   {
     title: "Strategy Backtester",

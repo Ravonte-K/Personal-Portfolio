@@ -194,14 +194,18 @@ def _build_predictions(feat_df: pd.DataFrame, artifacts: dict) -> list:
         direction_threshold=artifacts["direction_threshold"],
     ).reset_index(drop=True)
     source_dates = last_rows["Date"].reset_index(drop=True)
-    return [
-        {
+    results = []
+    for i in range(len(preds)):
+        pred_return_val = float(preds.iloc[i]["pred_return"])
+        rf_direction = 1 if pred_return_val > 0 else 0
+        lr_direction = int(preds.iloc[i]["direction"])
+        results.append({
             "date": (source_dates.iloc[i] + BDay(HORIZON_DAYS)).strftime("%Y-%m-%d"),
             "close": round(float(preds.iloc[i]["pred_price"]), 2),
-            "direction": int(preds.iloc[i]["direction"]),
-        }
-        for i in range(len(preds))
-    ]
+            "direction": lr_direction,
+            "confirmed": lr_direction == rf_direction,
+        })
+    return results
 
 
 @app.get("/predict/default")
