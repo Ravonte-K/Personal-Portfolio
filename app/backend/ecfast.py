@@ -276,6 +276,6 @@ def analyze_text(data: TextInput):
     return(findResponse(inp))
 
 
-if __name__ == "__main__":
-    # findResponse("testing testing testing apple is the company")
-    print(getComparisons("AAPL"))
+# if __name__ == "__main__":
+#     findResponse("testing testing testing apple is the company")
+#     print(getComparisons("AAPL"))
