@@ -10,3 +10,8 @@ primary_region = "ord"
 
 [env]
   CORS_ALLOWED_ORIGINS = "https://ml-project-web.fly.dev,http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001"
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1

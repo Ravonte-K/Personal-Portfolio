@@ -12,9 +12,9 @@ import {
   Legend,
 } from "recharts";
 
-// const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "https://ml-project-api.fly.dev").replace(/\/$/, "");
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "https://ml-project-api.fly.dev").replace(/\/$/, "");
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
+// const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
 
 
 const DEFAULT_URL = `${API_BASE_URL}/predict/default`;
@@ -236,13 +236,13 @@ export default function PricePredictionPage() {
                 {confirmedUp > 0 && (
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700 ring-1 ring-green-200">
                     <span className="h-2 w-2 rounded-full bg-green-500" />
-                    {confirmedUp}/{total} bullish
+                    {confirmedUp}/{total} Positive
                   </span>
                 )}
                 {confirmedDown > 0 && (
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-3 py-1 text-xs font-medium text-red-700 ring-1 ring-red-200">
                     <span className="h-2 w-2 rounded-full bg-red-500" />
-                    {confirmedDown}/{total} bearish
+                    {confirmedDown}/{total} Negative
                   </span>
                 )}
                 {confirmedUp === 0 && confirmedDown === 0 && (
