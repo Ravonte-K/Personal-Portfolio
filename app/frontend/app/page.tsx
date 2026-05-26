@@ -8,7 +8,7 @@ export default function HomePage() {
           Portfolio
         </p>
         <h1 className="hero-heading">
-          Exploring computer science and finance through data-driven projects
+          Exploring computer science through data-driven projects
         </h1>
         <p className="hero-subcopy">
           Focused on building strong fundamentals through hands-on work.
@@ -24,7 +24,7 @@ export default function HomePage() {
         <div className="panel">
           <h3 className="text-2xl font-semibold">Current Work</h3>
           <p className="section-copy">
-            Studying data and machine learning foundations and shipping small projects to improve engineering and data
+            Studying data science and machine learning foundations and shipping small projects to improve engineering and data
             skills.
           </p>
         </div>
