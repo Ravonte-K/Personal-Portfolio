@@ -11,7 +11,7 @@ export default function HomePage() {
           Exploring computer science through data-driven projects
         </h1>
         <p className="hero-subcopy">
-          Focused on building strong fundamentals through hands-on work.
+          Focused on building strong fundamentals through hands-on work. 
         </p>
       </div>
 
