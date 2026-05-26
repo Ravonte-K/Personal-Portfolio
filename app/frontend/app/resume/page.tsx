@@ -2,9 +2,16 @@ const experience = [
   {
     role: "AI Engineer Mentorship",
     company: "Blue Yonder",
-    summary: `Learning first hand from a generative AI software engineer at Blue Yonder. 
-    Blue Yonder is a supply chain company that serves a wide variety of clients. Specifically I work with the generative AI development team, following and learning from engineers.
-    I have built smaller projects utilizing the same skillset as their production.`
+    summary: `Learning first hand from a generative AI software engineer at Blue Yonder. Blue Yonder is a supply chain company that serves a wide variety of clients. Specifically I work with the generative AI development team, following and learning from engineers. I have built smaller projects utilizing the same skillset as their production.
+
+Responsabilities and experiences included:
+- Meeting deadlines and having open comunication working through projects and problems.
+- Built LLM-powered features using the same stack as production
+- Followed engineers through real-world generative AI workflows
+- Developed smaller projects using RAG, prompt engineering, and API integration
+- Gained hands-on experience with cloud-based AI infrastructure
+- Gained experience working with various other interesting frameworks and libraries.
+`
   },
   {
     role: "LLM course",
@@ -46,7 +53,7 @@ export default function ResumePage() {
             <h2 className="text-2xl font-semibold">
               {item.role} · {item.company}
             </h2>
-            <p className="section-copy">{item.summary}</p>
+            <p className="section-copy whitespace-pre-line">{item.summary}</p>
             {item.certificateUrl ? (
               <a
                 href={item.certificateUrl}

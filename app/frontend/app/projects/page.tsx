@@ -7,6 +7,7 @@ type Project = {
   title: string;
   description: string;
   href?: string;
+  repoUrl?: string;
   techStack?: string[];
   createdAt?: string;
   details?: string;
@@ -47,11 +48,12 @@ const projects: Project[] = [
   {
     title: "Jump Shot Analyzer",
     description: "A computer vision jumpshot analyzer that returns metrics based off a short side view video.",
-    details: `A computer vision tool that analyzes jump shot form from video using pose estimation. 
-    Extracts joint angles and timing (dip, set point, release) and generates a consistency report with visual plots and practical coaching cues. 
+    details: `A computer vision tool that analyzes jump shot form from video using pose estimation.
+    Extracts joint angles and timing (dip, set point, release) and generates a consistency report with visual plots and practical coaching cues.
     Built as an end-to-end system: video upload → pose tracking → metrics → results dashboard.`,
+    repoUrl: "https://github.com/Ravonte-K/jumpshotTracker",
     techStack: ["OpenCV", "Python", "FastAPI", "Matplotlib"],
-    createdAt: "..."
+    createdAt: "2026-5"
   }
 ];
 
@@ -162,6 +164,16 @@ export default function ProjectsPage() {
             <p className="project-date">Built: {activeProjectDate}</p>
             <h3 className="project-modal-title">{activeProject.title}</h3>
             <p className="project-modal-copy">{activeProjectDetails}</p>
+            {activeProject.repoUrl ? (
+              <a
+                href={activeProject.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1 text-base font-bold underline underline-offset-2 opacity-70 hover:opacity-100"
+              >
+                Repository ↗
+              </a>
+            ) : null}
             <TechStackViz techStack={activeProjectStack} />
             <button
               type="button"

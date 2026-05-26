@@ -15,6 +15,15 @@ export default function HomePage() {
         </p>
       </div>
 
+      <div className="panel">
+        <p className="kicker">About Me</p>  
+        <p className="section-copy mt-4" style={{ maxWidth: "none" }}>
+          My name is Ravonte Kriegler. I am pursuing a degree in computer science and statistics at Villanova University,
+          with a primary academic interest in machine learning, statistical modeling, and data-driven systems.
+          I aim to develop a deeper understanding in the fields that interest me through research adjacent projects, a structured mentorship, and independent study.
+        </p>
+      </div>
+
       <div>
         <p className="kicker">Overview</p>
         <h2 className="section-title">Applied Learning Through Real Projects</h2>
