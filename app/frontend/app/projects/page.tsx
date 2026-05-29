@@ -33,6 +33,7 @@ const projects: Project[] = [
     description: "Trains a model to predict a simple 10 market day outlook using historical price and volume features.",
     href: "/projects/price-prediction",
     techStack: ["Python", "Pandas", "Scikit-learn", "MLflow"],
+    repoUrl: 'https://github.com/Ravonte-K/ML-NextDayReturn',
     details: `A supervised ML pipeline for 10 trading day forcasting using historcal data.
               Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics. The model also outpreforms baseline models like simple MA and always up.`
   },
