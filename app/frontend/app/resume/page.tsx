@@ -34,6 +34,22 @@ Responsabilities and experiences included:
     role: "AP Computer Science Principles",
     company: "Hopkins High School",
     summary: "Studied for and passed the AP exam"
+  },
+  {
+    role: "Resume",
+    summary: (
+      <>
+        PDF of resume{" "}
+        <a
+          href="https://drive.google.com/file/d/1mJGrYAX5nccfRt5jXSDj7ptjjseZuMM4/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          here
+        </a>
+      </>
+    )
   }
 ];
 
