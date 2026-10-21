@@ -41,7 +41,7 @@ Responsabilities and experiences included:
       <>
         PDF of resume{" "}
         <a
-          href="https://drive.google.com/file/d/1mJGrYAX5nccfRt5jXSDj7ptjjseZuMM4/view?usp=sharing"
+          href="https://drive.google.com/file/d/1rA8k_fyh-lqnpE6lzhpPkWLixFfUu_Xw/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="underline"

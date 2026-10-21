@@ -5,22 +5,21 @@ export default function HomePage() {
     <section>
       <div className="hero-shell">
         <p className="hero-kicker">
-          Portfolio
+          
         </p>
         <h1 className="hero-heading">
-          Exploring computer science through data-driven projects
+          Digital Portfolio
         </h1>
         <p className="hero-subcopy">
-          Focused on building strong fundamentals through hands-on work. 
+          First year computer science and math student working towards machine learning and systems. 
         </p>
       </div>
 
       <div className="panel">
         <p className="kicker">About Me</p>  
         <p className="section-copy mt-4" style={{ maxWidth: "none" }}>
-          My name is Ravonte Kriegler. I am pursuing a degree in computer science and statistics at Villanova University,
-          with a primary academic interest in machine learning, statistical modeling, and data-driven systems.
-          I aim to develop a deeper understanding in the fields that interest me through research adjacent projects, a structured mentorship, and independent study.
+        I'm a first-year computer science student at Villanova University with an intended double major in mathematics, most interested in machine learning, data-driven systems, and the software that runs them.
+        From fall 2025 through spring 2026, I was a generative AI engineering mentee at Blue Yonder, where I built LLM applications with Azure and the OpenAI API.
         </p>
       </div>
 
@@ -33,16 +32,15 @@ export default function HomePage() {
         <div className="panel">
           <h3 className="text-2xl font-semibold">Current Work</h3>
           <p className="section-copy">
-            Studying data science and machine learning foundations and shipping small projects to improve engineering and data
-            skills.
+            I am strengthening my fundamentals in data structures and algorithms through project based work while balencing my universities courseload.
           </p>
         </div>
         <div className="panel">
-          <h3 className="text-2xl font-semibold">What You Can Explore</h3>
+          <h3 className="text-2xl font-semibold">Featured Projects</h3>
           <ul className="section-copy list-disc space-y-2 pl-5">
-            <li>Projects and experiments.</li>
-            <li>Experience and coursework.</li>
-            <li>My evolving focus areas.</li>
+            <li>Earnings Call Summarizer: live demo</li>
+            <li>Price Prediction Model: live demo</li>
+            <li>Jump Shot Analyzer: computer vision, on GitHub</li>
           </ul>
         </div>
       </div>
