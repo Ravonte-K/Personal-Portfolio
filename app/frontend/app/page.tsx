@@ -8,10 +8,10 @@ export default function HomePage() {
           
         </p>
         <h1 className="hero-heading">
-          Digital Portfolio
+          Project Portfolio
         </h1>
         <p className="hero-subcopy">
-          First year computer science and math student working towards machine learning and systems. 
+          Computer science and math student working towards machine learning and systems. 
         </p>
       </div>
 
