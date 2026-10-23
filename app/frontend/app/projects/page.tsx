@@ -22,11 +22,11 @@ const defaultProjectProperties = {
 const projects: Project[] = [
   {
     title: "Earnings Call Summarizer",
-    description: "A web app that summarizes earnings calls and extracts key risks for retail investors.",
+    description: "A web app that summarizes earnings calls and extracts key risks for retail investors. While pulling the sentiment from the transcribed earnings call and comparing that with current market data.",
     href: "/projects/earnings-summarizer",
     techStack: ["Python", "FastAPI", "OpenAI API", "PostgreSQL"],
     createdAt: "2025-12",
-    details: "Parses transcripts, extracts themes, and ranks key commentary for faster investor research."
+    details: "Parses transcripts, extracts themes, and ranks key commentary for faster investor research and conformation on sentiment signal."
   },
   {
     title: "Price Prediction Machine-Learning Model",

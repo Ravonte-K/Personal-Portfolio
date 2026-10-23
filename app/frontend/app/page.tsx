@@ -8,7 +8,7 @@ export default function HomePage() {
           
         </p>
         <h1 className="hero-heading">
-          Project Portfolio
+          Ravonte Kriegler
         </h1>
         <p className="hero-subcopy">
           Computer science and math student working towards machine learning and systems. 
@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="panel">
           <h3 className="text-2xl font-semibold">Current Work</h3>
           <p className="section-copy">
-            I am strengthening my fundamentals in data structures and algorithms through project based work while balencing my universities courseload.
+            Currently building Fairline, a prediction-market analytics app that helps users work through ambiguous rulesets and compares data with other venues with the same event. Next, getting the logic to work with a UI for casual and an API for businesses and interested users.
           </p>
         </div>
         <div className="panel">
