@@ -48,12 +48,10 @@ const projects: Project[] = [
   },
   {
     title: "Jump Shot Analyzer",
-    description: "A computer vision jumpshot analyzer that returns metrics based off a short side view video.",
-    details: `A computer vision tool that analyzes jump shot form from video using pose estimation.
-    Extracts joint angles and timing (dip, set point, release) and generates a consistency report with visual plots and practical coaching cues.
-    Built as an end-to-end system: video upload → pose tracking → metrics → results dashboard.`,
+    description: "Real-time shot detection from a webcam using pose estimation.",
+    details: `Tracks the shooting arm with MediaPipe Pose, computes elbow and wrist angles and their angular velocity frame by frame, and detects shot attempts with a small state machine. Logs each shot's peak velocities and joint paths and plots them after the session. A proof of concept; known issues and next steps are in the repo.`,
     repoUrl: "https://github.com/Ravonte-K/jumpshotTracker",
-    techStack: ["OpenCV", "Python", "FastAPI", "Matplotlib"],
+    techStack: ["Python", "OpenCV", "MediaPipe", "NumPy", "Matplotlib"],
     createdAt: "2026-5"
   }
 ];
