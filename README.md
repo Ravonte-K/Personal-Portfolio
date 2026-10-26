@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-A full-stack portfolio site that hosts two working projects: an **LLM-powered earnings call summarizer** and a **machine learning price prediction model** for SPY.
+A full-stack portfolio site works to present working projects: an **LLM-powered earnings call summarizer** and a **machine learning price prediction model** for SPY.
 
 **Live site:** https://ml-project-web.fly.dev
 
@@ -29,7 +29,16 @@ Predicts SPY's direction and price over the next 10 trading days. Visitors can u
 - **Evaluation:** chronological 80/20 train/test split, compared against naive baselines (always predict "up" for direction; predict no change for return and price).
 - On the site, a prediction is marked **confirmed** when both models agree on direction.
 
----
+### Jumpshot Tracker
+A real time shot detection and arm statistics from a webcam feed. A proof of concept that you can register and measure a shot off numeric criteria.
+
+**What it does:**
+- Tracks the right shoulder, elbow, wrist, and index finger on every frame with MediaPipe Pose.
+- Computes the elbow angle (shoulder -> elbow -> wrist)
+and wrist angle(elbow -> wrist -> index finger) and overlays said angles on video feed
+- Detects a shot when the elbow and wrist velocities pass a certain threshold then records the path and position of the arm for the estimated length of a given shot.
+- Logs each shots peak velocitites, elbows and wrist paths, and per frame velocity trace, then plots elbow velocity for ever shot when the recording session ends
+
 
 ## Architecture
 
@@ -76,11 +85,11 @@ flowchart LR
 │   │   └── requirements.txt
 │   └── frontend/
 │       ├── app/
-│       │   ├── page.tsx                            # Home
-│       │   ├── projects/page.tsx                   # Project list
+│       │   ├── page.tsx                           
+│       │   ├── projects/page.tsx                   
 │       │   ├── projects/earnings-summarizer/page.tsx
 │       │   ├── projects/price-prediction/page.tsx
-│       │   └── resume/page.tsx                     # Experience
+│       │   └── resume/page.tsx                     
 │       ├── Dockerfile
 │       └── fly.toml
 ├── pyproject.toml            # Local Python environment (uv)
@@ -89,47 +98,3 @@ flowchart LR
 
 ---
 
-## Running Locally
-
-### Backend
-
-```bash
-cd app/backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-export OPENAI_API_KEY="your-key"
-uvicorn ecfast:app --reload --port 8080
-```
-
-If no saved model exists, the price model trains on `data/spy.csv` the first time a prediction is requested.
-
-### Frontend
-
-```bash
-cd app/frontend
-npm install
-NEXT_PUBLIC_API_URL=http://localhost:8080 npm run dev
-```
-
-Then open http://localhost:3000.
-
-### Environment Variables
-
-| Variable | Where | Notes |
-|---|---|---|
-| `OPENAI_API_KEY` | Backend | Required; the backend will not start without it |
-| `OPENAI_MODEL` | Backend | Optional; defaults to `gpt-4.1-mini` |
-| `CORS_ALLOWED_ORIGINS` | Backend | Optional comma-separated list; defaults to `localhost:3000` and the live site |
-| `NEXT_PUBLIC_API_URL` | Frontend | Optional; defaults to the production API |
-
----
-
-## Deployment
-
-Each app deploys to Fly.io from its own directory:
-
-```bash
-cd app/backend && fly secrets set OPENAI_API_KEY="your-key" && fly deploy
-cd app/frontend && fly deploy
-```
