@@ -133,7 +133,7 @@ def findResponse(data: str):
             "content": (f'compare your initial analysis of the earning call report to the following data. call out any conflics or confirmations: {getComparisons(str(ticker))}')
         }
     ],
-    max_tokens=13107,
+    max_tokens=1500,
     temperature=.1,
     top_p=1.0,
     frequency_penalty=0.0,
