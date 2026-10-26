@@ -14,7 +14,7 @@ const experience = [
       <>
         PDF of resume{" "}
         <a
-          href="https://drive.google.com/file/d/1rA8k_fyh-lqnpE6lzhpPkWLixFfUu_Xw/view?usp=sharing"
+          href="https://drive.google.com/file/d/1szXp4RbZRObedDPV52D9rVIzqpqBPw6r/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="underline"

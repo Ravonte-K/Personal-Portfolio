@@ -30,9 +30,9 @@ const projects: Project[] = [
   },
   {
     title: "Price Prediction Machine-Learning Model",
-    description: "Trains a model to predict a simple 10 market day outlook using historical price and volume features.",
+    description: "A supervised ML pipeline that predicts SPY’s direction and 10-trading-day return: logistic regression for direction, random forest for return, using 5-day return, 20/60-day momentum, and distance from the 50-day moving average. Evaluated on a chronological 80/20 split against naive baselines, after fixing look-ahead leakage from an earlier random split.",
     href: "/projects/price-prediction",
-    techStack: ["Python", "Pandas", "Scikit-learn", "MLflow"],
+    techStack: ["Python", "Pandas", "Scikit-learn"],
     repoUrl: 'https://github.com/Ravonte-K/ML-NextDayReturn',
     details: `A supervised ML pipeline for 10 trading day forcasting using historcal data.
               Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics. The model also outpreforms baseline models like simple MA and always up.`
