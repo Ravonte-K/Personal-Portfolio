@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <a href="mailto:ravontek@icloud.com">ravontek@icloud.com</a>
               <a href="https://github.com/Ravonte-K" target="_blank" rel="noreferrer">GitHub</a>
               <a href="https://www.linkedin.com/in/ravonte-kriegler" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="https://drive.google.com/file/d/1szXp4RbZRObedDPV52D9rVIzqpqBPw6r/view?usp=sharing" target="_blank" rel="noreferrer">Resume (PDF)</a>
+              <a href="https://drive.google.com/file/d/1m9pxsK66yFal6av-JG80ArYRDxvE_OF_/view?usp=sharing" target="_blank" rel="noreferrer">Resume (PDF)</a>
             </nav>
           </div>
         </footer>

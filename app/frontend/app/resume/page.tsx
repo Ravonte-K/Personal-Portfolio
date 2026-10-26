@@ -14,7 +14,7 @@ const experience = [
       <>
         PDF of resume{" "}
         <a
-          href="https://drive.google.com/file/d/1szXp4RbZRObedDPV52D9rVIzqpqBPw6r/view?usp=sharing"
+          href="https://drive.google.com/file/d/1m9pxsK66yFal6av-JG80ArYRDxvE_OF_/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="underline"
@@ -27,14 +27,13 @@ const experience = [
   {
     role: "Generative AI Engineering Mentee",
     company: "Blue Yonder",
-    summary: `Learned first hand from a generative AI software engineer at Blue Yonder. Blue Yonder is a supply chain company that serves a wide variety of clients. Specifically, I worked with the generative AI development team, following and learning from engineers. I have built smaller projects utilizing the same skillset as their production.
+    summary: `Mentee on Blue Yonder's generative AI development team (supply-chain software), working under the guidance of a generative AI software engineer.
 
-Responsabilities and experiences included:
-- Meeting deadlines and having open comunication working through projects and problems.
-- Built LLM-powered features using the same stack as production
+Responsibilities and experiences included:
+- Meeting deadlines and maintaining open communication while working through projects and bugs.
 - Followed engineers through real-world generative AI workflows
 - Developed smaller projects using RAG, prompt engineering, and API integration
-- Gained hands-on experience with cloud-based AI infrastructure
+- Gained hands-on experience with Azure infrastructure
 - Gained experience working with various other interesting frameworks and libraries.
 `
   },

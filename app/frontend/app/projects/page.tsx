@@ -30,22 +30,18 @@ const projects: Project[] = [
   },
   {
     title: "Price Prediction Machine-Learning Model",
-    description: "A supervised ML pipeline that predicts SPY’s direction and 10-trading-day return, uses logistic regression for direction, random forest for return, using 5-day return.",
+    description: "Predicts SPY’s direction and 10-trading-day return with logistic regression and a random forest, evaluated on a chronological split against baselines like always guessing up.",
     href: "/projects/price-prediction",
     techStack: ["Python", "Pandas", "Scikit-learn"],
     repoUrl: 'https://github.com/Ravonte-K/Personal-Portfolio/blob/main/app/backend/ml.py',
-    details: `A supervised ML pipeline for 10 trading day forcasting using historcal data.
-              Includes feature engineering like returns, volatility, momentum, rolling stats, walk foward validation and evaluation with ML metrics. The model also outpreforms baseline models like simple MA and always up.
-              logistic regression for direction, random forest for return, using 5-day return, 20/60-day momentum, and distance from the 50-day moving average. Evaluated on a chronological 80/20 split against naive baselines, after fixing look-ahead leakage from an earlier random split.`
+    details: `A supervised ML pipeline that predicts SPY’s direction and 10-trading-day return: logistic regression for direction, random forest for return, using 5-day return, 20/60-day momentum, and distance from the 50-day moving average. Evaluated on a chronological 80/20 split against naive baselines, after fixing look-ahead leakage from an earlier random split.`
   },
   {
     title: "Strategy Backtester",
-    description: " A modular backtesting engine that can test basic strategies.",
-    details: `*PLANNED* A lightweight backtesting framework for evaluating simple trading strategies on historical market data.
-     Supports momentum, moving average crossover, RSI, and model-driven signals with basic transaction cost modeling. Computes core performance metrics including total return, win rate, Sharpe ratio, and max drawdown.
-     Designed to validate ideas quickly and understand how strategy logic translates into real portfolio outcomes.`,
-    techStack: ["Python", "Pandas", "Numpy", "Schwab API (for market data)", "Matplotlib","Streamlit"],
-    createdAt: "..."
+    description: "A modular engine for testing basic trading strategies on historical data.",
+    details: `A lightweight framework for testing simple trading strategies on historical market data: momentum, moving-average crossover, RSI, and model-driven signals, with basic transaction costs. It will report total return, win rate, Sharpe ratio, and max drawdown.`,
+    techStack: ["Python", "pandas", "NumPy", "Matplotlib"],
+    createdAt: "Planned"
   },
   {
     title: "Jump Shot Analyzer",
