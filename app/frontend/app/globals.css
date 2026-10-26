@@ -35,6 +35,24 @@ section {
   @apply mx-auto flex max-w-6xl flex-col items-start gap-4 px-4 py-4 sm:px-5 md:flex-row md:items-center md:justify-between md:px-10 md:py-6;
 }
 
+.site-footer {
+  border-top: 1px solid var(--line);
+}
+
+.site-footer-inner {
+  color: var(--muted);
+  @apply mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm sm:px-5 md:flex-row md:items-center md:justify-between md:px-10 md:py-8 md:text-base;
+}
+
+.footer-links {
+  @apply flex flex-wrap gap-x-5 gap-y-1 font-semibold;
+}
+
+.footer-links a {
+  color: var(--text);
+  @apply py-1 underline-offset-4 hover:underline;
+}
+
 .brand-mark {
   @apply text-2xl font-bold tracking-tight sm:text-3xl;
 }

@@ -4,7 +4,7 @@ const experience = [
 
     summary: 
     `Villanova University — B.S. Computer Science, expected 2030 (intended math double major)
-    Relevant coursework: Discrete Structures, Algorithims and data structures I, Calculus I
+    Relevant coursework: Discrete Structures, Algorithms & Data Structures I, Calculus I
 
     Hopkins High School — AP Calculus BC, AP Computer Science A, AP Computer Science Principles, AP Statistics, AP Macroeconomics, AP Calculus AB`
   },
@@ -25,7 +25,7 @@ const experience = [
     )
   },
   {
-    role: "AI Engineer Mentorship",
+    role: "Generative AI Engineering Mentee",
     company: "Blue Yonder",
     summary: `Learned first hand from a generative AI software engineer at Blue Yonder. Blue Yonder is a supply chain company that serves a wide variety of clients. Specifically, I worked with the generative AI development team, following and learning from engineers. I have built smaller projects utilizing the same skillset as their production.
 
